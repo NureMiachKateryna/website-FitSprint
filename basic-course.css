@@ -30,6 +30,8 @@ header nav ul li a {
 }
 
 main {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
@@ -50,6 +52,8 @@ main {
 }
 
 .course-details {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -75,6 +79,15 @@ main {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+}
+
+.course-register ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-register ul li {
+    margin-bottom: 10px;
 }
 
 .about-course {
@@ -126,4 +139,72 @@ footer {
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
+}
+
+/* Additional styling to match the second screenshot */
+.icon {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icon img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.course-details .icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.course-details p {
+    flex: 1;
+}
+
+.course-register {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course-register button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.course-register button:hover {
+    background-color: #0056b3;
+}
+
+.about-course ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-course ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.about-course ul li:before {
+    content: '✔';
+    color: #00f;
+    margin-right: 10px;
 }
