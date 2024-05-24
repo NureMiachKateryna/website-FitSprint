@@ -48,7 +48,7 @@ footer:after,
 
 header {
   width: 100%;
-  height: 600px;
+  height: 700px;
   background-image: url("../img/fon.png");
   background-position: center;
   background-size: cover;
@@ -74,7 +74,11 @@ header {
   color: #ffffff;
 }
 .header-main-text {
-  margin-top: 120px;
+  margin-top: 150px;
+  text-align:center;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .name {
   text-align: center;
@@ -90,17 +94,21 @@ header {
 }
 .header-button {
   background-color: #c13d68;
+  color:#ffffff;
   height: 50px;
-  line-height: 50px;
-  width: 120px;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 25px;
-  font-weight: 400;
-  letter-spacing: 2.5px;
-  margin: 0 auto;
-  margin-top: 30px;
+line-height: 50px;
+width: 120px;
+text-align: center;
+font-size: 16px;
+border-radius: 25px;
+font-weight: 400;
+letter-spacing: 2.5px;
+border: none;
+margin-top: 30px;
+align-items: center;
+cursor: pointer;
 }
+
 .header-button span {
   color: #ffffff;
 }
@@ -114,8 +122,8 @@ main {
   width: 100%;
 }
 .main-container {
-  padding: 0 20px 0 20px;
-  height: 1000px;
+  padding: 0 10px 0 10px;
+  height: 2000px;
   background-color: #070707;
 
 }
@@ -157,7 +165,7 @@ main {
 }
 
 .second-title-button {
-  background-color: #BF4937;
+background-color: #BF4937;
   height: 55px;
   line-height: 55px;
   width: 300px;
@@ -167,14 +175,69 @@ main {
   font-family: Open Sans;
   text-align:center;
   margin-top: 30px;
-}
-.second-title-button span {
+  cursor: pointer;
   color: #ffffff;
+  border:none;
 }
-.second-title-button:hover {
-  background-color: #FFCB2B;
-  color:#000000;
+.second-title-button:hover{
+background-color:#FFCB2B;
+color:#000000;
+}
+.main-first-img img{
+height: 550px;
+width: 440px;
+margin:0 auto;
+margin-top:50px;
+}
+/* START ABOUTUS */
+.aboutus{
+margin:20px 100px 0 100px;
+}
+.aboutus-first-title{
+display: flex;
+justify-content: space-between;
+height: 500px;
+margin-top: 100px;
+}
+.aboutus-second-title{
+  display: flex;
+justify-content: space-between;
+margin-top: 1000px;
+}
+.aboutus-first-subtitle{
+  margin: 130px 0 0 50px;
+}
+.aboutus-second-subtitle{
+width: 300px;
+height: 300px;
+
+}
+.seventh-subtitle{
+width: 400px;
+}
+.aboutus-first-text{
+  font-size:40px;
+  font-family:Inter;
+  color:#CFCFCE;
+  padding-bottom: 15px;
+}
+.aboutus-first-tagline{
+  font-size:17px;
+  font-family:Inter;
+  color:#838280;
+  line-height:25px;
 }
 
+
+
+
+
+
+
+
+
+
+
+/* END ABOUTUS */
 
 /* END MAIN */
