@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitSprint</title>
-    <link rel="stylesheet" href="basic-course.css">
+    <link rel="stylesheet" href="css/basic-course.css">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="logo.jpg" alt="FitSprint Logo">
+            <img src="img/logo.jpg">
         </div>
         <nav>
             <ul>
-                <li><a href="#">Головна сторінка</a></li>
-                <li><a href="#">Про нас</a></li>
-                <li><a href="#">Вхід</a></li>
-                <li><a href="#">Реєстрація</a></li>
+                <li><a href="index.html">ГОЛОВНА СТОРІНКА</a></li>
+                <li><a href="aboutUs.html">ПРО НАС</a></li>
+                <li><a href="login.html">ВХІД</a></li>
+                <li><a href="registration.html">РЕЄСТРАЦІЯ</a></li>
             </ul>
         </nav>
     </header>
@@ -27,19 +27,21 @@
         <section class="course-container">
             <div class="course">
                 <h1>Базовий курс</h1>
-                <p class="rating">⭐ 8.5/10 (5 відгуків про курс)</p>
+                <p class="rating">⭐ <span style="color: #FFCB2B;">8.5/10</span> <span
+                        style="color: white; font-size: smaller;">(5 відгуків про курс)</span></p>
                 <div class="course-details">
                     <div class="icon-info">
-                        <img src="calendar-icon.png" alt="Calendar">
+                        <img src="calendar-icon.png">
                         <p>2 дні</p>
                     </div>
                     <div class="icon-info">
-                        <img src="group-icon.png" alt="Group">
+                        <img src="group-icon.png">
                         <p>Участь у потоці</p>
                     </div>
                     <div class="icon-info">
-                        <img src="free-icon.png" alt="Free">
+                        <img src="free-icon.png">
                         <p>Безкоштовно</p>
+
                     </div>
                 </div>
                 <p>Учасники отримають рекомендації щодо фізичної активності, включаючи силові вправи, систему
@@ -47,50 +49,99 @@
                     характеристики, цілі та обмеження кожного учасника.</p>
             </div>
             <div class="course-register">
-                <h2>Вартість курсу: 0 ₴</h2>
-                <p><a href="#">Авторизуйтесь</a>, щоб придбати</p>
-                <button>Зареєструватися</button>
+                <h2 style="color: white;">Вартість курсу:
+                    <h3 style="color: blue; display: inline;">0 ₴</h3>
+                </h2>
+                <p><a href="login.html"><em>Авторизуйтесь</a></em>, щоб придбати</p>
+                <button><a href="login.html" style="text-decoration: none; color: white;">Зареєструватися</a></button>
+                <h4 style="color: white;">Цей курс включає:</h4>
                 <ul>
-                    <li><img src="clock-icon.png" alt="Clock"> 2 дні</li>
-                    <li><img src="access-icon.png" alt="Access"> Термін доступу 1 рік з дати купівлі</li>
-                    <li><img src="calendar-icon.png" alt="Calendar"> Курс буде починатися у будь-який день у будь-який
+                    <li><img src="clock-icon.png"> 2 дні</li>
+                    <li><img src="access-icon.png"> Термін доступу 1 рік з дати купівлі</li>
+                    <li><img src="calendar-icon.png"> Курс буде починатися у будь-який день у будь-який
                         час</li>
-                    <li><img src="level-icon.png" alt="Level"> Рівень складності: для середнього</li>
-                    <li><img src="bonus-icon.png" alt="Bonus"> Бонус для всіх учнів</li>
-                    <li><img src="support-icon.png" alt="Support"> Технічна підтримка у робочий час, чат у месенджері,
+                    <li><img src="level-icon.png"> Рівень складності: для середнячків</li>
+                    <li><img src="bonus-icon.png"> Бонус для всіх учнів</li>
+                    <li><img src="support-icon.png"> Технічна підтримка: у робочий час, чат у месенджері,
                         електронна пошта, телефон</li>
-                    <li><img src="payment-icon.png" alt="Payment"> Доступ після оплати</li>
+                    <li><img src="payment-icon.png"> Доступ: після оплати</li>
                 </ul>
             </div>
+        </section>
+        <section class="course-info">
+            <h2>Що ви дізнаєтеся?</h2>
+            <div class="course-info-columns">
+                <ul class="course-info-left">
+                    <li><img src="img/check-icon.png"> Основи здорового способу життя</li>
+                    <li><img src="img/check-icon.png"> Методи самоконтролю</li>
+                    <li><img src="img/check-icon.png"> Прийоми психологічної підтримки</li>
+                </ul>
+                <ul class="course-info-right">
+                    <li><img src="img/check-icon.png"> Практичні поради та інструменти</li>
+                    <li><img src="img/check-icon.png"> Розуміння енергетичного балансу</li>
+                </ul>
+            </div>
+            <h3>ПРО КУРС</h3>
+
+            <p>Курс для новачків у схудненні – це спеціалізована програма, створена для тих, хто тільки починає свій
+                шлях до здорової ваги. Він надає знання, навички та підтримку, необхідні для ефективного схуднення і
+                формування здорового способу життя. На курсі новачки отримають:</p>
+            <ul>
+                <br>
+                <li>Основи здорового харчування: Пояснення принципів збалансованого харчування, вивчення правильних
+                    порцій та вибору корисних продуктів.</li>
+                <br>
+                <li>Програма фізичної активності для початківців: Введення в легкі аеробні вправи, базові силові
+                    тренування та розтяжки для покращення фізичної форми.</li>
+                <br>
+                <li>План харчування та тренувань: Розробка індивідуалізованого плану харчування та фізичної
+                    активності,
+                    враховуючи особисті вподобання, цілі та обмеження.</li>
+                <br>
+                <li>Підтримка та мотивація: Надання підтримки від фахівців в галузі харчування та фітнесу, а також
+                    мотиваційна підтримка для досягнення поставлених цілей.</li>
+                <br>
+                <li>Моніторинг прогресу: Ведення щоденника харчування та тренувань, а також регулярний ваговий
+                    контроль
+                    для відстеження прогресу.</li>
+            </ul>
+            <br>
+            <p>Цей курс створений з урахуванням потреб початківців і дозволяє їм крок за кроком рухатися до
+                досягнення
+                своїх цілей у схудненні та покращенні здоров'я.</p>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <div class="logo">
-                <img src="logo.png" alt="FitSprint Logo">
+            <div class="logo-blue">
+                <img src="img/logo-blue.jpg" alt="FitSprint Logo">
             </div>
             <div class="contact-info">
-                <p>345 Faulconer Drive, Suite 4 • Charlottesville, CA, 12345</p>
-                <p>(123) 456-7890</p>
-                <p>(123) 456-7890</p>
-            </div>
-            <div class="social-media">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">YouTube</a>
-                <a href="#">Instagram</a>
-                <a href="#">Google+</a>
-                <a href="#">Pinterest</a>
-                <a href="#">RSS</a>
+                <div class="address">
+                    <p><img src="img/address-icon.png" alt="Address Icon"> Площа Визволення 3А, Київ, Україна, 10001</p>
+                </div>
+                <div class="phones">
+                    <p><img src="img/phone-icon.png" alt="Phone Icon"> +380 965 348 512</p>
+                    <p><img src="img/phone-icon.png" alt="Phone Icon"> +380 966 777 452</p>
+                </div>
+                <div class="social-media">
+                    <a href="#"><img src="img/facebook-icon.png"></a>
+                    <a href="#"><img src="img/twitter-icon.png"></a>
+                    <a href="#"><img src="img/linkedin-icon.png"></a>
+                    <a href="#"><img src="img/youtube-icon.png"></a>
+                    <a href="#"><img src="img/instagram-icon.png"></a>
+                    <a href="#"><img src="img/googleplus-icon.png"></a>
+                    <a href="#"><img src="img/pinterest-icon.png"></a>
+                    <a href="#"><img src="img/rss-icon.png"></a>
+                </div>
             </div>
         </div>
         <div class="footer-links">
-            <a href="#">Про нас</a>
-            <a href="#">Контакти</a>
-            <a href="#">Служба допомоги</a>
-            <a href="#">Політика конфіденційності</a>
+            <a href="aboutUs.html">ПРО НАС</a>
+            <a href="#">КОНТАКТИ</a>
+            <a href="#">СЛУЖБА ДОПОМОГИ</a>
+            <a href="#">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>
         </div>
     </footer>
 
