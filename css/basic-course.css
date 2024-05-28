@@ -15,7 +15,8 @@ header {
 }
 
 header .logo img {
-    height: 50px;
+    height: 70px;
+    margin-left: 115px;
 }
 
 header nav ul {
@@ -23,6 +24,8 @@ header nav ul {
     display: flex;
     margin: 0;
     padding: 0;
+    gap: 50px;
+    margin-right: 150px;
 }
 
 header nav ul li {
@@ -82,11 +85,11 @@ main {
 
 .course-register {
     flex: 1;
-    background-color: #1c1c1c;
+    background-color: #000000;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #444;
+    border: 1px solid #2f319b;
 }
 
 .course-register h2 {
@@ -96,7 +99,7 @@ main {
 }
 
 .course-register p a {
-    color: #00f;
+    color: rgb(255, 255, 255);
     text-decoration: underline;
 }
 
@@ -108,7 +111,7 @@ main {
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
-    margin-bottom: 1em;
+    margin-bottom: 1еm;
 }
 
 .course-register button:hover {
@@ -132,13 +135,54 @@ main {
     height: 24px;
 }
 
-footer {
-    background-color: #000;
-    padding: 20px;
+.course-info {
+    margin: 40px 0;
+}
+
+.course-info h2 {
+    color: #fff;
+    font-size: 2em;
+}
+
+.course-info h3 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 50px;
+}
+
+.course-info-columns {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.course-info-columns ul {
+    list-style: none;
+    padding: 0;
+    width: 45%;
+}
+
+.course-info-columns ul li {
+    display: flex;
     align-items: center;
+    margin-bottom: 20px;
+}
+
+.course-info-columns ul li img {
+    margin-right: 20px;
+    width: 24px;
+    height: 24px;
+}
+
+footer {
+    background-color: #000;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
+    color: #fff;
 }
 
 .footer-content {
@@ -148,22 +192,72 @@ footer {
     margin-bottom: 20px;
 }
 
-.footer-content .logo img {
-    height: 50px;
+.footer-content .logo-blue {
+    flex: 1;
+    margin-left: 200px;
 }
 
-.footer-content .contact-info p,
-.footer-content .social-media a {
+.footer-content .logo-blue img {
+    height: 150px;
+}
+
+.footer-content .contact-info {
+    flex: 2;
+    text-align: left;
+    margin-left: 200px;
+}
+
+.footer-content .contact-info p {
+    display: flex;
+    align-items: center;
     margin: 5px 0;
 }
 
+.footer-content .contact-info img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.footer-content .phones {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    margin-top: 20px;
+}
+
+.footer-content .phones p {
+    margin: 0;
+}
+
+.footer-content .social-media {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: flex-start;
+    margin-left: -10px;
+}
+
+.footer-content .social-media a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+.footer-content .social-media a img {
+    width: 24px;
+    height: 24px;
+}
+
 .footer-links {
-    text-align: center;
-    width: 100%;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin: 30px auto 0 auto;
 }
 
 .footer-links a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 20px;
     text-decoration: none;
+    font-weight: bold;
 }
