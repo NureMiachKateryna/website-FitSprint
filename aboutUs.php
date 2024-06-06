@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -23,13 +26,20 @@
               <img src="img/logo.png" alt="" />
             </div>
             <nav class="menu">
-              <ul>
-                <li><a href="index.html">ГОЛОВНА СТОРІНКА</a></li>
-                <li><a href="aboutUs.html">ПРО НАС</a></li>
-                <li><a href="login.html">ВХІД</a></li>
-                <li><a href="registration.html">РЕЄСТРАЦІЯ</a></li>
-              </ul>
-            </nav>
+            <ul>
+              <li><a href="index.php">ГОЛОВНА СТОРІНКА</a></li>
+              <li><a href="aboutUs.php">ПРО НАС</a></li>
+              <?php 
+              if(isset($_SESSION['email'])){
+                echo '<li><a href="profile.php">ПРОФІЛЬ</a></li>';
+              }else{
+            
+              ?>
+              <li><a href="login.php">ВХІД</a></li>
+              <li><a href="registration.php">РЕЄСТРАЦІЯ</a></li>
+              <?php   }?>
+            </ul>
+          </nav>
           </div>
         </section>
       </header>

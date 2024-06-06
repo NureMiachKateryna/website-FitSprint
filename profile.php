@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +12,7 @@
   <body>
     <div class="header-profile">
       <div class="profile-arrow">
-       <a href="index.html"> <img src="img/arrow-profile.png" alt="" /></a>
+       <a href="index.php"> <img src="img/arrow-profile.png" alt="" /></a>
       </div>
       <div class="profile-logo">
         <img src="img/logo.jpg" alt="" />
@@ -28,11 +31,11 @@
 
       <div class="profile-text">
         <div class="profile1">
-        <input  placeholder="Ім'я Прізвище" type="text" class="name-surname" />
+        <input placeholder="Ім'я Прізвище" type="text" class="name-surname" value="<?php echo isset($_SESSION['name']) && isset($_SESSION['surname']) ? $_SESSION['name'] . ' ' . $_SESSION['surname'] : ''; ?>" />
        <a href="#"> <img src="img/carandash.png" alt="" /></a>
       </div>
       <div class="profile2">
-        <input placeholder="useremail@gmail.com" type="text" class="email" />
+      <input placeholder="useremail@gmail.com" type="text" class="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" />
        <a href="#"> <img src="img/carandash.png" alt="" /></a>
       </div>
     </div>
@@ -130,9 +133,9 @@
       <div class="footer-line"></div>
       <div class="footer-container">
      <div class="links">
-      <a href="#" class="link1">Змінити пароль</a>
-      <a href="#" class="link2">Вийти з профілю</a>
-      <a href="#" class="link3">Видалити профіль</a>
+      <a href="reset-password.php" class="link1">Змінити пароль</a>
+      <a href="logout.php" class="link2">Вийти з профілю</a>
+      <a href="delete_profile.php" class="link3">Видалити профіль</a>
      </div>
           <div class="logo-blue">
               <img src="img/logo-blue.jpg" alt="FitSprint Logo">

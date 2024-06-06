@@ -1,3 +1,33 @@
+<?php 
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    require 'databases/users.php';
+    $database = new Users();
+    $database->open();
+    $database->conn->select_db('FitSprintUsers');
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $email = $_POST['email'];
+    $password = $_POST['psw'];
+    if (!preg_match("/^[a-zA-Z'-]+$/", $name) || !preg_match("/^[a-zA-Z'-]+$/", $surname)) {
+        echo "Неправильне ім'я або прізвище";
+        exit;
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Неправильний формат електронної пошти";
+        exit;
+    }
+    $sql = "INSERT INTO users (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
+    
+    if ($database->conn->query($sql) === TRUE) {
+      header("Location:index.php");
+    } else {
+        echo "Помилка: " . $sql . "<br>" . $database->conn->error;
+    }
+    
+    $database->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +43,7 @@
             <img src="img/logo.jpg" alt="">
         </div>
         <div class="header-icon">
-            <a href="index.html"><img src="img/cross.png" alt=""></a>
+            <a href="index.php"><img src="img/cross.png" alt=""></a>
         </div>
     </section>
 
@@ -26,11 +56,11 @@
     <p>Вже є обліковий запис?</p>
 </div>
 <div class="link">
-    <a href="login.html">Увійти</a>
+    <a href="login.php">Увійти</a>
 </div>
 </div>
 
-<form action="#">
+<form action="#" method="POST">
     <input type="text" placeholder="Ім'я" name="name" required>
     <input type="text" placeholder="Прізвище" name="surname" required>
     <input type="text" placeholder="Ел. Пошта" name="email" required>
