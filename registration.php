@@ -1,5 +1,7 @@
 <?php 
 session_start();
+$notification = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require 'databases/users.php';
     $database = new Users();
@@ -74,5 +76,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <a href="#"><img src="img/google.png" alt="" class="google-img"></a>
     </section>
  </main>
+ 
 </body>
 </html>

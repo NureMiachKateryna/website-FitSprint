@@ -183,7 +183,7 @@ session_start();
                   </ul>
                 </div>
                 <div class="sub-link">
-                  <a href="#">Переглянути</a>
+                  <a href="basic-course.html">Переглянути</a>
                   <img src="img/arr.png" alt="" />
                 </div>
               </div>
@@ -208,7 +208,7 @@ session_start();
                   </ul>
                 </div>
                 <div class="sub-link">
-                  <a href="#">Переглянути</a>
+                  <a href="standard-course.html">Переглянути</a>
                   <img src="img/arr.png" alt="" />
                 </div>
               </div>
@@ -239,7 +239,7 @@ session_start();
                   </ul>
                 </div>
                 <div class="sub-link">
-                  <a href="#">Переглянути</a>
+                  <a href="advanced-course.html">Переглянути</a>
                   <img src="img/arr.png" alt="" />
                 </div>
               </div>
@@ -363,11 +363,11 @@ session_start();
             </p>
           </div>
           <div class="social-media">
-            <a href="#"><img src="img/communication.png" /></a>
+            <a href="https://www.facebook.com/people/Course-Fitsprint/pfbid08d1rzB3iAdqaBTNqSzCKsf7p95TFLAxpfmLs9PgoihoE5M2ZHZ19v1Wy9pGHji6rl/"><img src="img/communication.png" /></a>
             <a href="#"><img src="img/twitter.png" /></a>
             <a href="#"><img src="img/linkedin.png" /></a>
             <a href="#"><img src="img/video.png" /></a>
-            <a href="#"><img src="img/instagram.png" /></a>
+            <a href="https://www.instagram.com/fitsprint4/"><img src="img/instagram.png" /></a>
             <a href="#"><img src="img/social.png" /></a>
             <a href="#"><img src="img/pinterest.png" /></a>
           </div>
