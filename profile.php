@@ -8,17 +8,29 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
     <link rel="stylesheet" href="css/profile.css">
+    <style>
+      .footer-b a {
+  text-decoration: none;
+  color: white;
+  font-family:Inter;
+  font-size:20px;
+  magin:20px 0 0 0;
+}
+
+    </style>
 </head>
 <body>
     <div class="header-profile">
         <div class="profile-arrow">
             <a href="index.php"><img src="img/arrow-profile.png" alt="Back" /></a>
         </div>
+      
         <div class="profile-logo">
             <img src="img/logo.jpg" alt="Logo" />
         </div>
+      
     </div>
-
+   
     <div class="profile-personal-inf">
         <div class="part1">
             <div class="profile-img-text">
@@ -34,11 +46,11 @@ session_start();
             <div class="profile-text">
                 <div class="profile1">
                     <input placeholder="Ім'я Прізвище" type="text" class="name-surname" value="<?php echo isset($_SESSION['name']) && isset($_SESSION['surname']) ? $_SESSION['name'] . ' ' . $_SESSION['surname'] : ''; ?>" />
-                    <a href="#"><img src="img/carandash.png" alt="Edit" /></a>
+                
                 </div>
                 <div class="profile2">
                     <input placeholder="useremail@gmail.com" type="text" class="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" />
-                    <a href="#"><img src="img/carandash.png" alt="Edit" /></a>
+                  
                 </div>
             </div>
         </div>
@@ -130,7 +142,6 @@ session_start();
             </div>
         </div>
     </div>
-
     <footer>
         <div class="footer-line"></div>
         <div class="footer-container">
@@ -139,10 +150,15 @@ session_start();
                 <a href="logout.php" class="link2">Вийти з профілю</a>
                 <a href="delete_profile.php" class="link3">Видалити профіль</a>
             </div>
+            <div class="footer-b">
+               <a href="https://drive.google.com/file/d/1bYvcCq08vFLw0Z4CPwkzm9D3-VNpK9Ba/view?usp=sharing">Завантажити додаток</a>
+            </div>
             <div class="logo-blue">
                 <img src="img/logo-blue.jpg" alt="FitSprint Logo">
             </div>
+         
         </div>
+      
         <div class="footer-line"></div>
     </footer>
 

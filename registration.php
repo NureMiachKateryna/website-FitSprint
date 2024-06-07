@@ -1,7 +1,6 @@
 <?php 
 session_start();
-$notification = "";
-
+$check = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require 'databases/users.php';
     $database = new Users();
@@ -11,22 +10,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $password = $_POST['psw'];
-    if (!preg_match("/^[a-zA-Z'-]+$/", $name) || !preg_match("/^[a-zA-Z'-]+$/", $surname)) {
-        echo "Неправильне ім'я або прізвище";
-        exit;
+    if (!preg_match("/^[a-zA-Zа-яА-ЯёЁєЄіІїЇґҐ'-]+$/u", $name) || !preg_match("/^[a-zA-Zа-яА-ЯёЁєЄіІїЇґҐ'-]+$/u", $surname)) {
+      ?>
+      <div class="check-text">
+      <?php 
+        echo "Неправильно введено ім'я або прізвище\n";
+        ?>
+        </div>
+        <?php
+       $check = true;
+
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Неправильний формат електронної пошти";
-        exit;
+        ?>
+        <div class="check-text">
+        <?php 
+        echo "Неправильний формат електронної пошти\n";
+        ?>
+        </div>
+        <?php
+        $check = true;
+
     }
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $database->conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        ?>
+      <div class="check-text">
+      <?php 
+         echo "Користувач з такою поштою вже існує\n";
+         ?>
+         </div>
+         <?php
+          $check = true;
+   
+         
+    }
+    if (!$check) {
     $sql = "INSERT INTO users (name, surname, email, password) VALUES ('$name', '$surname', '$email', '$password')";
     
     if ($database->conn->query($sql) === TRUE) {
       header("Location:index.php");
+      exit;
     } else {
         echo "Помилка: " . $sql . "<br>" . $database->conn->error;
     }
-    
+}
     $database->close();
 }
 ?>
@@ -37,6 +70,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/registration.css">
+    <style>
+        .check-text{
+            color:white;
+            font-family:Inter;
+            font-size:16px;
+            margin: 10px;
+            text-align:center;
+        }
+    </style>
 </head>
 <body>
  <main>
@@ -73,8 +115,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <hr class="first">
     <hr class="second">
 </div>
-<a href="#"><img src="img/google.png" alt="" class="google-img"></a>
     </section>
+
  </main>
  
 </body>

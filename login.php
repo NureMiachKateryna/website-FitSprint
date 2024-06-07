@@ -12,10 +12,27 @@ class Login{
             
         $email = isset($_POST['email']) ? $_POST['email'] : '';
         $password = isset($_POST['psw']) ? $_POST['psw'] : '';
-        if (empty($email) || empty($password)) {
-            echo "Fill in all the fields";
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            ?>
+            <div class="check-text">
+            <?php 
+            echo "Неправильний формат електронної пошти";
+            ?>
+            </div>
+            <?php
             return;
-        }else{
+        }
+        if (empty($email) || empty($password)) {
+            ?>
+            <div class="check-text">
+            <?php 
+            echo "Заповніть всі поля!";
+            ?>
+            </div>
+            <?php
+            return;
+        }
+        else{
             if ($this->conn) {
                 $this->conn->select_db("fitSprintUsers");
                 $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
@@ -29,7 +46,13 @@ class Login{
                     header("Location: profile.php");
                     exit;
                 }else{
+                    ?>
+                    <div class="check-text">
+                    <?php 
                     echo "Такого користувача не існує";
+                    ?>
+                    </div>
+                    <?php
                 }
             }else{
                 echo "Помилка підключення до бази даних";
@@ -49,6 +72,15 @@ $login->check();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        .check-text{
+            color:white;
+            font-family:Inter;
+            font-size:16px;
+            margin: 10px;
+            text-align:center;
+        }
+    </style>
 </head>
 <body>
  <main>
@@ -71,11 +103,6 @@ $login->check();
     <input type="password" placeholder="Пароль" name="psw" required>
     <button type="submit" class="loginbtn">Увійти</button>
 </form>
-
-<button class="login-button">
-<img src="img/google.png" alt="">
-Вхід за допомогою Google
-</button>
     </section>
  </main>
 </body>

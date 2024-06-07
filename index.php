@@ -379,6 +379,7 @@ session_start();
         <a href="#">СЛУЖБА ДОПОМОГИ</a>
         <a href="#">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>
       </div>
+    
       <div class="footer-line"></div>
     </footer>
   </body>

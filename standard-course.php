@@ -77,7 +77,8 @@ session_start();
                     $userEmail = $_SESSION['email'];
                     ?>
                     <a id="purchase-link" href="https://secure.wayforpay.com/button/bd3f50e490220" style="display:inline-block!important;background:#2B3160 url('https://s3.eu-central-1.amazonaws.com/w4p-merch/button/bg6x2.png') no-repeat center right;background-size:cover;width: 256px!important;height:54px!important;border:none!important;border-radius:14px!important;padding:18px!important;text-decoration:none!important;box-shadow:3px 2px 8px rgba(71,66,66,0.22)!important;text-align:left!important;box-sizing:border-box!important;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';"><span style="font-family:Verdana,Arial,sans-serif!important;font-weight:bold!important;font-size:14px!important;color:#ffffff!important;line-height:18px!important;vertical-align:middle!important;">Купити</span></a>
-                        <a id="course" href="paid-standard-course.php" style="display:none;color:blue;text-decoration:underline;">Перейти до курсу</a>   
+                        <a id="course" href="paid-standard-course.php" style="display:none;color:white;text-decoration:underline;">Перейти до курсу</a>   
+                        <br /><br /> <a id="payment" href="payment.html" style="display:none;color:blue;text-decoration:underline;">Переглянути статус оплати</a>
 <?php
                 }
                 ?>
@@ -172,20 +173,21 @@ session_start();
     </footer>
     <script>
         const userEmail = "<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>";
-
         document.getElementById('purchase-link').addEventListener('click', function() {
             localStorage.setItem('coursePurchased', userEmail);
             document.getElementById('course').style.display = 'inline';
             document.getElementById('purchase-link').style.display = 'none';
+            document.getElementById('payment').style.display = 'inline';
         });
-
         window.addEventListener('load', function() {
             if (localStorage.getItem('coursePurchased') === userEmail) {
                 document.getElementById('course').style.display = 'inline';
                 document.getElementById('purchase-link').style.display = 'none';
+                document.getElementById('payment').style.display = 'inline';
             } else {
                 document.getElementById('course').style.display = 'none';
                 document.getElementById('purchase-link').style.display = 'inline-block';
+                document.getElementById('payment').style.display = 'none';
             }
         });
     </script>
