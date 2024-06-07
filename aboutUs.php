@@ -156,7 +156,7 @@ session_start();
         </div>
       </div>
       <div class="footer-links">
-        <a href="aboutUs.html">ПРО НАС</a>
+        <a href="aboutUs.php">ПРО НАС</a>
         <a href="#">КОНТАКТИ</a>
         <a href="#">СЛУЖБА ДОПОМОГИ</a>
         <a href="#">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>

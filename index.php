@@ -183,7 +183,7 @@ session_start();
                   </ul>
                 </div>
                 <div class="sub-link">
-                  <a href="basic-course.html">Переглянути</a>
+                  <a href="basic-course.php">Переглянути</a>
                   <img src="img/arr.png" alt="" />
                 </div>
               </div>
@@ -192,7 +192,7 @@ session_start();
             <div class="sub">
               <div class="s s2">
                 <div class="sub-subtitle">
-                  <p>Advanced Plan</p>
+                  <p>Standart Plan</p>
                 </div>
                 <div class="sub-text">
                   <p>
@@ -208,7 +208,7 @@ session_start();
                   </ul>
                 </div>
                 <div class="sub-link">
-                  <a href="standard-course.html">Переглянути</a>
+                  <a href="standard-course.php">Переглянути</a>
                   <img src="img/arr.png" alt="" />
                 </div>
               </div>
@@ -239,7 +239,7 @@ session_start();
                   </ul>
                 </div>
                 <div class="sub-link">
-                  <a href="advanced-course.html">Переглянути</a>
+                  <a href="advanced-course.php">Переглянути</a>
                   <img src="img/arr.png" alt="" />
                 </div>
               </div>

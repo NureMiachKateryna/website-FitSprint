@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -13,14 +16,21 @@
         <div class="logo">
             <img src="img/logo.jpg">
         </div>
-        <nav>
+        <nav class="menu">
             <ul>
-                <li><a href="index.php">ГОЛОВНА СТОРІНКА</a></li>
-                <li><a href="aboutUs.php">ПРО НАС</a></li>
-                <li><a href="login.php">ВХІД</a></li>
-                <li><a href="registration.php">РЕЄСТРАЦІЯ</a></li>
+              <li><a href="index.php">ГОЛОВНА СТОРІНКА</a></li>
+              <li><a href="aboutUs.php">ПРО НАС</a></li>
+              <?php 
+              if(isset($_SESSION['email'])){
+                echo '<li><a href="profile.php">ПРОФІЛЬ</a></li>';
+              }else{
+            
+              ?>
+              <li><a href="login.php">ВХІД</a></li>
+              <li><a href="registration.php">РЕЄСТРАЦІЯ</a></li>
+              <?php   }?>
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <main>
@@ -56,8 +66,24 @@
                 <h2 style="color: white;">Вартість курсу:
                     <h3 style="color: blue; display: inline;">1399 ₴</h3>
                 </h2>
-                <p><a href="login.html"><em>Авторизуйтесь</a></em>, щоб придбати</p>
-                <button><a href="login.html" style="text-decoration: none; color: white;">Зареєструватися</a></button>
+                <?php
+                   if(!isset($_SESSION['email'])){
+                
+                  
+                ?>
+                <p><a href="login.php"><em>Авторизуйтесь</a></em>, щоб придбати</p>
+                <button><a href="registration.php" style="text-decoration: none; color: white;">Зареєструватися</a></button>
+                <?php 
+                }else{
+                    $userEmail = $_SESSION['email'];
+                    ?>
+                        <a id="purchase-link" href="https://secure.wayforpay.com/button/beaf5c0c08cff" style="display:inline-block!important;background:#2B3160 url('https://s3.eu-central-1.amazonaws.com/w4p-merch/button/bg6x2.png') no-repeat center right;background-size:cover;width: 256px!important;height:54px!important;border:none!important;border-radius:14px!important;padding:18px!important;text-decoration:none!important;box-shadow:3px 2px 8px rgba(71,66,66,0.22)!important;text-align:left!important;box-sizing:border-box!important;" onmouseover="this.style.opacity='0.8';" onmouseout="this.style.opacity='1';"><span style="font-family:Verdana,Arial,sans-serif!important;font-weight:bold!important;font-size:14px!important;color:#ffffff!important;line-height:18px!important;vertical-align:middle!important;">Купити</span></a>
+                    <a id="course" href="paid-advanced-course.php" style="display:none;color:blue;text-decoration:underline;">Перейти до курсу</a>
+             
+               <?php
+                }
+                
+                ?>
                 <h4 style="color: white;">Цей курс включає:</h4>
                 <ul>
                     <li><img src="img/calendar1.png"> 12 днів</li>
@@ -143,15 +169,30 @@
             </div>
         </div>
         <div class="footer-links">
-            <a href="aboutUs.html">ПРО НАС</a>
+            <a href="aboutUs.php">ПРО НАС</a>
             <a href="#">КОНТАКТИ</a>
             <a href="#">СЛУЖБА ДОПОМОГИ</a>
             <a href="#">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>
         </div>
         <div class="footer-line"></div>
     </footer>
-
-    <script src="script.js"></script>
+    <script>
+        const userEmail = "<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>";
+        document.getElementById('purchase-link').addEventListener('click', function() {
+            localStorage.setItem('coursePurchased', userEmail);
+            document.getElementById('course').style.display = 'inline';
+            document.getElementById('purchase-link').style.display = 'none';
+        });
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('coursePurchased') === userEmail) {
+                document.getElementById('course').style.display = 'inline';
+                document.getElementById('purchase-link').style.display = 'none';
+            } else {
+                document.getElementById('course').style.display = 'none';
+                document.getElementById('purchase-link').style.display = 'inline-block';
+            }
+        });
+    </script>
 </body>
 
 </html>

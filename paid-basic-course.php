@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -13,14 +16,21 @@
         <div class="logo">
             <img src="img/logo.jpg">
         </div>
-        <nav>
+        <nav class="menu">
             <ul>
-                <li><a href="index.php">ГОЛОВНА СТОРІНКА</a></li>
-                <li><a href="aboutUs.php">ПРО НАС</a></li>
-                <li><a href="login.php">ВХІД</a></li>
-                <li><a href="registration.php">РЕЄСТРАЦІЯ</a></li>
+              <li><a href="index.php">ГОЛОВНА СТОРІНКА</a></li>
+              <li><a href="aboutUs.php">ПРО НАС</a></li>
+              <?php 
+              if(isset($_SESSION['email'])){
+                echo '<li><a href="profile.php">ПРОФІЛЬ</a></li>';
+              }else{
+            
+              ?>
+              <li><a href="login.php">ВХІД</a></li>
+              <li><a href="registration.php">РЕЄСТРАЦІЯ</a></li>
+              <?php   }?>
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <main>
@@ -138,7 +148,7 @@
             </div>
         </div>
         <div class="footer-links">
-            <a href="aboutUs.html">ПРО НАС</a>
+            <a href="aboutUs.php">ПРО НАС</a>
             <a href="#">КОНТАКТИ</a>
             <a href="#">СЛУЖБА ДОПОМОГИ</a>
             <a href="#">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>

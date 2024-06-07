@@ -83,7 +83,7 @@ session_start();
             <p>Поточний курс</p>
         </div>
         <div class="text-inf">
-            <p>ПРОСУНУТИЙ КУРС</p>
+            <a href="paid-basic-course.php"><p>ПОСИЛАННЯ НА БАЗОВИЙ КУРС</p></a>
         </div>
 
         <div class="img-text">
@@ -123,7 +123,7 @@ session_start();
                             <img src="img/detail4.png" alt="Detail4">
                         </div>
                         <div class="t">
-                            <p>Рівень складності: <br />для профі</p>
+                            <p>Рівень складності: <br />для новачків</p>
                         </div>
                     </div>
                 </div>

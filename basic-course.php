@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -13,14 +16,21 @@
         <div class="logo">
             <img src="img/logo.jpg">
         </div>
-        <nav>
+        <nav class="menu">
             <ul>
-                <li><a href="index.html">ГОЛОВНА СТОРІНКА</a></li>
-                <li><a href="aboutUs.html">ПРО НАС</a></li>
-                <li><a href="login.html">ВХІД</a></li>
-                <li><a href="registration.html">РЕЄСТРАЦІЯ</a></li>
+              <li><a href="index.php">ГОЛОВНА СТОРІНКА</a></li>
+              <li><a href="aboutUs.php">ПРО НАС</a></li>
+              <?php 
+              if(isset($_SESSION['email'])){
+                echo '<li><a href="profile.php">ПРОФІЛЬ</a></li>';
+              }else{
+            
+              ?>
+              <li><a href="login.php">ВХІД</a></li>
+              <li><a href="registration.php">РЕЄСТРАЦІЯ</a></li>
+              <?php   }?>
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <main>
@@ -53,11 +63,25 @@
                 <h2 style="color: white;">Вартість курсу:
                     <h3 style="color: blue; display: inline;">0 ₴</h3>
                 </h2>
-                <p><a href="login.html"><em>Авторизуйтесь</a></em>, щоб придбати</p>
-                <button><a href="login.html" style="text-decoration: none; color: white;">Зареєструватися</a></button>
+                <?php
+                   if(!isset($_SESSION['email'])){
+                
+                  
+                ?>
+                <p><a href="login.php"><em>Авторизуйтесь</a></em>, щоб придбати</p>
+               
+                <button><a href="registration.php" style="text-decoration: none; color: white;">Зареєструватися</a></button>
+                <?php 
+                }else{
+                    ?>
+                     <button><a href="profile.php" style="text-decoration: none; color: white;">Переглянути курс</a></button>
+               <?php
+                }
+                
+                ?>
                 <h4 style="color: white;">Цей курс включає:</h4>
                 <ul>
-                    <li><img src="img/calendar1.png"> 2 дні</li>
+                    <li><img src="img/calendar1.png"> 12 дні</li>
                     <li><img src="img/hourglass.png"> Термін доступу 1 рік з дати купівлі</li>
                     <li><img src="img/time.png"> Коли будете навчатися: у будь-який день
                         у будь-який час</li>
@@ -141,7 +165,7 @@
             </div>
         </div>
         <div class="footer-links">
-            <a href="aboutUs.html">ПРО НАС</a>
+            <a href="aboutUs.php">ПРО НАС</a>
             <a href="#">КОНТАКТИ</a>
             <a href="#">СЛУЖБА ДОПОМОГИ</a>
             <a href="#">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a>
